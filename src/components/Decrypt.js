@@ -6,7 +6,7 @@ export default function Decrypt(props) {
 
   const [encText, setEncText] = useState("");
   const [key, setKey] = useState("");
-  const [decText, setDecText] = useState("");
+  const [decText, setDecText] = useState("Decrypted text will appear here");
 
   const handleEncOnChange = (event) => {
     setEncText(event.target.value);
@@ -143,7 +143,7 @@ export default function Decrypt(props) {
             id="decrypted-text"
             rows="5"
             onChange={handleDecOnChange}
-            value={decText.length === 0 ? "Decrypt text to see it" : decText}
+            value={decText}
             disabled={true}
           ></textarea>
         </div>
