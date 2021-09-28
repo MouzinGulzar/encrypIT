@@ -54,7 +54,7 @@ export default function Decrypt(props) {
       props.showAlert("Decrypted Succesfully", "success");
     }
     if (decrypted.length === 0) {
-      props.showAlert("Either key is invalid or entered text is not encrypted one", "danger");
+      props.showAlert("Either key is invalid or you havn't entered encrypted text", "danger");
     }
 
   };
