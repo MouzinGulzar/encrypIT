@@ -6,7 +6,7 @@ export default function Encrypt(props) {
 
   const [text, setText] = useState("");
   const [key, setKey] = useState("");
-  const [encText, setEncText] = useState("Encrypted text will appear here");
+  const [encText, setEncText] = useState("");
 
   const encrypt = (string, k) => {
     string = text;
@@ -132,7 +132,7 @@ export default function Encrypt(props) {
             id="encrypted-text"
             rows="5"
             onChange={handleEncTextOnChange}
-            value={encText}
+            value={encText.length === 0 ? "Encrypted text will appear here" : encText}
             disabled={true}
           ></textarea>
         </div>

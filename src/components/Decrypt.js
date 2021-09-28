@@ -6,7 +6,7 @@ export default function Decrypt(props) {
 
   const [encText, setEncText] = useState("");
   const [key, setKey] = useState("");
-  const [decText, setDecText] = useState("Decrypted text will appear here");
+  const [decText, setDecText] = useState("");
 
   const handleEncOnChange = (event) => {
     setEncText(event.target.value);
@@ -26,27 +26,27 @@ export default function Decrypt(props) {
       setKey(event.target.value);
     }
   };
-  
+
   const handleDecOnChange = (event) => {
     setDecText(event.target.value);
   };
-  
+
   const decrypt = (string, k) => {
     string = encText;
     k = key;
 
     string = string.replace(/g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z/gi, ".");
-    
+
     decArr = string.split(".");
 
     for (let i = 0; i < string.length; i++) {
       decArr[i] = parseInt(decArr[i], 16) / props.constant[i % 26] / k;
       decArr[i] = String.fromCharCode(decArr[i]);
     }
-    
+
     decArr = decArr.filter((el) => el !== "\u0000");
     decrypted = decArr.join("");
-    
+
     if (k <= 0) {
       props.showAlert("Please Use a Valid Key", "danger");
     } else {
@@ -54,9 +54,11 @@ export default function Decrypt(props) {
       props.showAlert("Decrypted Succesfully", "success");
     }
     if (decrypted.length === 0) {
-      props.showAlert("Either key is invalid or you havn't entered encrypted text", "danger");
+      props.showAlert(
+        "Either key is invalid or you havn't entered encrypted text",
+        "danger"
+      );
     }
-
   };
 
   const handlePaste = async () => {
@@ -143,7 +145,9 @@ export default function Decrypt(props) {
             id="decrypted-text"
             rows="5"
             onChange={handleDecOnChange}
-            value={decText}
+            value={
+              decText.length === 0 ? "Decrypted text will appear here" : decText
+            }
             disabled={true}
           ></textarea>
         </div>
