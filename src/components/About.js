@@ -48,7 +48,7 @@ export default function About() {
           <div class="card-body">
             <h5 class="card-title" style={{fontWeight:"bold", color: "#0d6efd" }}>Decrypt</h5>
             <p class="card-text">
-              Once you get a encrypted text from anyone, you can use the
+              Once you get an encrypted text from anyone, you can use the
               decryption tool to decrypt the text with the same key using which
               it was encrypted.
             </p>

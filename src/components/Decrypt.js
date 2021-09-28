@@ -45,6 +45,20 @@ export default function Decrypt(props) {
     }
 
     decArr = decArr.filter((el) => el !== "\u0000");
+    decArr = decArr.filter((el) => el !== "\u0001");
+    decArr = decArr.filter((el) => el !== "\u0002");
+    decArr = decArr.filter((el) => el !== "\u0003");
+    decArr = decArr.filter((el) => el !== "\u0010");
+    decArr = decArr.filter((el) => el !== "\u0011");
+    decArr = decArr.filter((el) => el !== "\u0012");
+    decArr = decArr.filter((el) => el !== "\u0013");
+    decArr = decArr.filter((el) => el !== "\u0014");
+    decArr = decArr.filter((el) => el !== "\u0015");
+    decArr = decArr.filter((el) => el !== "\u0016");
+    decArr = decArr.filter((el) => el !== "\u0017");
+    decArr = decArr.filter((el) => el !== "\u0018");
+    decArr = decArr.filter((el) => el !== "\u0015");
+    
     decrypted = decArr.join("");
 
     if (k <= 0) {
