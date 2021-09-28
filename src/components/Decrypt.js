@@ -53,10 +53,10 @@ export default function Decrypt(props) {
       setDecText(decrypted);
       props.showAlert("Decrypted Succesfully", "success");
     }
-
     if (decrypted.length === 0) {
-      props.showAlert("Text you want to decrypt is not encrypted", "danger");
+      props.showAlert("Either key is invalid or entered text is not encrypted one", "danger");
     }
+
   };
 
   const handlePaste = async () => {
