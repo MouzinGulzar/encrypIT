@@ -3,37 +3,6 @@ import React, { useState } from "react";
 export default function Decrypt(props) {
   let decArr = [];
   let decrypted;
-  let check =
-    decArr.includes("0") ||
-    decArr.includes("1") ||
-    decArr.includes("2") ||
-    decArr.includes("3") ||
-    decArr.includes("4") ||
-    decArr.includes("5") ||
-    decArr.includes("6") ||
-    decArr.includes("7") ||
-    decArr.includes("8") ||
-    decArr.includes("9") ||
-    decArr.includes("o") ||
-    decArr.includes("j") ||
-    decArr.includes("g") ||
-    decArr.includes("p") ||
-    decArr.includes("m") ||
-    decArr.includes("t") ||
-    decArr.includes("v") ||
-    decArr.includes("k") ||
-    decArr.includes("n") ||
-    decArr.includes("y") ||
-    decArr.includes("i") ||
-    decArr.includes("q") ||
-    decArr.includes("w") ||
-    decArr.includes("h") ||
-    decArr.includes("r") ||
-    decArr.includes("u") ||
-    decArr.includes("x") ||
-    decArr.includes("l") ||
-    decArr.includes("s") ||
-    decArr.includes("z");
 
   const [encText, setEncText] = useState("");
   const [key, setKey] = useState("");
@@ -55,15 +24,6 @@ export default function Decrypt(props) {
       props.showAlert("Key can't be a Special Characters", "danger");
     } else {
       setKey(event.target.value);
-    }
-  };
-
-  const checkIfDecryptable = () => {
-    if (check) {
-      setDecText(decrypted);
-      props.showAlert("Decrypted Succesfully", "success");
-    } else {
-      props.showAlert("Text you want to decrypt is not encrypted", "danger");
     }
   };
   
