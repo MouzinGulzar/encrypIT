@@ -20,7 +20,7 @@ export default function Encrypt(props) {
     }
     let index = 0;
     for (let i = 0; i < string.length - 1; i++) {
-      encStr[2 * i + 1] = props.joint[index];
+      encStr[2 * i + 1] = props.joint[index % 20];
       index++;
     }
 
